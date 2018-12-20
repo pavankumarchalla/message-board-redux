@@ -7,7 +7,7 @@ class Navbar extends React.Component {
       <div>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <Link className="navbar-brand" to="/">
-            News Reader
+            Message Board
           </Link>
           <button
             className="navbar-toggler"
@@ -24,17 +24,12 @@ class Navbar extends React.Component {
             <ul className="navbar-nav">
               <li className="nav-item">
                 <Link className="nav-link" to="/">
-                  Home <span className="sr-only">(current)</span>
+                  Public Wall <span className="sr-only">(current)</span>
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/search">
-                  Search
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/post">
-                  Post
+                <Link className="nav-link" to="/private">
+                  Private Message
                 </Link>
               </li>
             </ul>

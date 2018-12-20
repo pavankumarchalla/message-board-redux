@@ -1,6 +1,6 @@
 import React from "react";
 
-class PostForm extends React.Component {
+class PrivateMessage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -54,4 +54,4 @@ class PostForm extends React.Component {
     );
   }
 }
-export default PostForm;
+export default PrivateMessage;
