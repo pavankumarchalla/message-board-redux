@@ -7,9 +7,12 @@ import App from "./components/App";
 import CommentForm from "./components/CommentForm";
 import Navbar from "./components/Navbar";
 import commentReducer from "./reducers/comment";
+import PrivateMessage from "./components/PrivateMessage";
+import PrivateReducer from "./reducers/private_message";
 
 const rootReducer = combineReducers({
-  comments: commentReducer
+  comments: commentReducer,
+  privateMessages: PrivateReducer
 });
 const store = createStore(rootReducer);
 ReactDOM.render(
@@ -18,7 +21,7 @@ ReactDOM.render(
       <div>
         <Navbar />
         <Route path="/" exact component={App} />
-        <Route path="/post" component={CommentForm} />
+        <Route path="/private" component={PrivateMessage} />
       </div>
     </BrowserRouter>
   </Provider>,

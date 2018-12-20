@@ -27,6 +27,11 @@ class Navbar extends React.Component {
                   Home <span className="sr-only">(current)</span>
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/private">
+                  Private Message <span className="sr-only">(current)</span>
+                </Link>
+              </li>
             </ul>
           </div>
         </nav>
