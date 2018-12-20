@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Route } from "react-router-dom";
 import App from "./components/App";
-import PostForm from "./components/PostForm";
+import CommentForm from "./components/CommentForm";
 import Navbar from "./components/Navbar";
 
 ReactDOM.render(
@@ -11,7 +11,7 @@ ReactDOM.render(
       <div>
         <Navbar />
         <Route path="/" exact component={App} />
-        <Route path="/post" component={PostForm} />
+        <Route path="/post" component={CommentForm} />
       </div>
     </BrowserRouter>
   </div>,

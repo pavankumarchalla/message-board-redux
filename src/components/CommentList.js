@@ -1,34 +1,24 @@
 import React from "react";
 
-class PostList extends React.Component {
-  handleDelete = item => {
-    // this.props.deleteTodo(item);
+class CommentList extends React.Component {
+  handleDelete = comment => {
+    this.props.deleteComment(comment);
   };
 
-  renderPost(post) {
-    if (post) {
-      return <a href={post.url}>{post.title}</a>;
-    }
-  }
-
   render() {
-    if (!this.props.posts.length > 0) {
-      return "loading....";
-    }
-
     return (
       <ul className="list-group">
-        {this.props.posts.map(post => {
+        {this.props.comments.map(comment => {
           return (
-            <div key={post.title} className="card mt-1">
+            <div key={comment} className="card mt-1">
               <div className="card-body">
                 <span className="ml-2" role="img" aria-label="">
                   👍
                 </span>
                 <span className="mr-4 upvotes">1</span>
-                {this.renderPost(post)}
+                {comment}
                 <span
-                  onClick={this.handleDelete.bind(this, post)}
+                  onClick={this.handleDelete.bind(this, comment)}
                   className="float-right"
                 >
                   delete
@@ -42,4 +32,4 @@ class PostList extends React.Component {
   }
 }
 
-export default PostList;
+export default CommentList;

@@ -1,27 +1,30 @@
 import React from "react";
-import PostList from "./PostList";
+import CommentList from "./CommentList";
+import CommentForm from "./CommentForm";
 import "bootstrap/dist/css/bootstrap.css";
 
 class App extends React.Component {
   state = {
-    posts: [
-      {
-        id: 1,
-        title: "This is a new title",
-        url: "http://google.com"
-      }
-    ]
+    comments: []
   };
 
-  addPost(post) {
-    //this.setState({ posts: [...this.state.posts, post] });
+  addComment(comment) {
+    this.setState({ comments: [...this.state.comments, comment] });
+  }
+
+  deleteComment(comment) {
+    const updatedComments = this.state.comments.filter(c => c !== comment);
+    this.setState({ comments: updatedComments });
   }
 
   render() {
     return (
       <div>
-        {/* <TodoForm addTodo={item => this.props.addTodo(item)} /> */}
-        <PostList posts={this.state.posts} deletePost={this.deletePost} />
+        <CommentForm addComment={comment => this.addComment(comment)} />
+        <CommentList
+          comments={this.state.comments}
+          deleteComment={comment => this.deleteComment(comment)}
+        />
       </div>
     );
   }
