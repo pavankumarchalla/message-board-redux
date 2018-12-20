@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from "react-redux";
 
 class CommentList extends React.Component {
   handleDelete = comment => {
@@ -32,4 +33,9 @@ class CommentList extends React.Component {
   }
 }
 
-export default CommentList;
+const mapStateToProps = state => {
+  return {
+    comments: state.comments
+  };
+};
+export default connect(mapStateToProps)(CommentList);

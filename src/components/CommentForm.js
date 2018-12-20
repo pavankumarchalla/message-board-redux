@@ -1,4 +1,6 @@
 import React from "react";
+import { connect } from "react-redux";
+import * as actions from "../actions";
 
 class PostForm extends React.Component {
   constructor(props) {
@@ -18,7 +20,7 @@ class PostForm extends React.Component {
     event.preventDefault();
     this.props.addComment(this.state.commentInput);
     this.setState({
-      inputText: ""
+      commentInput: ""
     });
   };
   render() {
@@ -38,4 +40,8 @@ class PostForm extends React.Component {
     );
   }
 }
-export default PostForm;
+
+export default connect(
+  null,
+  actions
+)(PostForm);
