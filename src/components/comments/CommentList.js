@@ -18,7 +18,7 @@ class CommentList extends React.Component {
                   👍
                 </span>
                 <span className="mr-4 upvotes">1</span>
-                {comment}
+                <span className="comment">{comment}</span>
                 <span
                   onClick={this.handleDelete.bind(this, comment)}
                   className="float-right"
