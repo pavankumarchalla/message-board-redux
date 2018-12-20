@@ -4,10 +4,9 @@ import { BrowserRouter, Route } from "react-router-dom";
 import { createStore, combineReducers } from "redux";
 import { Provider } from "react-redux";
 import App from "./components/App";
-import CommentForm from "./components/CommentForm";
 import Navbar from "./components/Navbar";
 import commentReducer from "./reducers/comment";
-import PrivateMessage from "./components/PrivateMessage";
+import PrivateMessage from "./components/messages/PrivateMessage";
 import PrivateReducer from "./reducers/private_message";
 
 const rootReducer = combineReducers({

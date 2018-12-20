@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import * as privateMessages from "../actions/private_message";
+import * as privateMessages from "../../actions/private_message";
 
 class PrivateMessageForm extends React.Component {
   constructor(props) {

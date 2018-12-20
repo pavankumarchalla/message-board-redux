@@ -1,16 +1,16 @@
 import React from "react";
 import { connect } from "react-redux";
-import * as actions from "../actions";
+import * as messageActionCreator from "../../actions/private_message";
 
 class CommentList extends React.Component {
   handleDelete = comment => {
-    this.props.deleteComment(comment);
+    this.props.deletePrivateMessage(comment);
   };
 
   render() {
     return (
       <ul className="list-group">
-        {this.props.comments.map(comment => {
+        {this.props.messages.map(comment => {
           return (
             <div key={comment} className="card mt-1">
               <div className="card-body">
@@ -36,10 +36,10 @@ class CommentList extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    comments: state.comments
+    messages: state.privateMessages
   };
 };
 export default connect(
   mapStateToProps,
-  actions
+  messageActionCreator
 )(CommentList);

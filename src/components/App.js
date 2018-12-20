@@ -1,6 +1,6 @@
 import React from "react";
-import CommentList from "./CommentList";
-import CommentForm from "./CommentForm";
+import CommentList from "./comments/CommentList";
+import CommentForm from "./comments/CommentForm";
 import "bootstrap/dist/css/bootstrap.css";
 
 class App extends React.Component {
