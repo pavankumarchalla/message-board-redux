@@ -18,7 +18,6 @@ ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
       <div>
-        <Navbar />
         <Route path="/" exact component={App} />
         <Route path="/private" component={PrivateMessage} />
       </div>
