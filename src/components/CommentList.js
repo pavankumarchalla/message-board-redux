@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import * as actions from "../actions";
 
 class CommentList extends React.Component {
   handleDelete = comment => {
@@ -38,4 +39,7 @@ const mapStateToProps = state => {
     comments: state.comments
   };
 };
-export default connect(mapStateToProps)(CommentList);
+export default connect(
+  mapStateToProps,
+  actions
+)(CommentList);

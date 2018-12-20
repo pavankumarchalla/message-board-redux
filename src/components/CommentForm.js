@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import * as actions from "../actions";
 
-class PostForm extends React.Component {
+class CommentForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -44,4 +44,17 @@ class PostForm extends React.Component {
 export default connect(
   null,
   actions
-)(PostForm);
+)(CommentForm);
+
+// const mapDispatchToProps = (dispatch, ownProps) => {
+//   return {
+//     addComment: comment => {
+//       dispatch(actions.addComment(comment));
+//     }
+//   };
+// };
+
+// export default connect(
+//   null,
+//   mapDispatchToProps
+// )(CommentForm);

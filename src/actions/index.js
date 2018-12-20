@@ -4,3 +4,10 @@ export const addComment = comment => {
     comment: comment
   };
 };
+
+export const deleteComment = comment => {
+  return {
+    type: "DELETE_COMMENT",
+    comment: comment
+  };
+};
