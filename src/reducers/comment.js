@@ -6,6 +6,10 @@ export default function(state = initialState, action) {
       return [...state, action.comment];
     case "DELETE_COMMENT":
       return state.filter(comment => comment !== action.comment);
+    case "FETCH_COMMENTS":
+      console.log(action.payload);
+      const comments = action.payload.data.map(comment => comment.name);
+      return [...state, ...comments];
     default:
       return state;
   }

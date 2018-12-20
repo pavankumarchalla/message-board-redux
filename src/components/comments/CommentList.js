@@ -3,6 +3,10 @@ import { connect } from "react-redux";
 import * as actions from "../../actions/comment";
 
 class CommentList extends React.Component {
+  componentDidMount() {
+    this.props.fetchComments();
+  }
+
   handleDelete = comment => {
     this.props.deleteComment(comment);
   };
