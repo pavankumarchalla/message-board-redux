@@ -1,26 +1,21 @@
 import React from "react";
-import CommentList from "./comments/CommentList";
-import CommentForm from "./comments/CommentForm";
+import { BrowserRouter, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
 import Navbar from "./Navbar";
+import Root from "../Root";
+import PrivateMessage from "./messages/PrivateMessage";
+import PublicMessage from "./PublicMessage";
 
 class App extends React.Component {
-  addComment(comment) {
-    this.setState({ comments: [...this.state.comments, comment] });
-  }
-
-  deleteComment(comment) {
-    const updatedComments = this.state.comments.filter(c => c !== comment);
-    this.setState({ comments: updatedComments });
-  }
-
   render() {
     return (
-      <div>
-        <Navbar />
-        <CommentForm />
-        <CommentList />
-      </div>
+      <BrowserRouter>
+        <div>
+          <Navbar />
+          <Route path="/" exact component={PublicMessage} />
+          <Route path="/private" component={PrivateMessage} />
+        </div>
+      </BrowserRouter>
     );
   }
 }

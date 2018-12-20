@@ -11,14 +11,6 @@ beforeEach(() => {
   wrapper = shallow(<App />);
 });
 
-it("should render comment form", () => {
-  expect(wrapper.find(CommentForm).length).toEqual(1);
-});
-
-it("should render comment list", () => {
-  expect(wrapper.find(CommentList).length).toEqual(1);
-});
-
 it("should render Navbar", () => {
   expect(wrapper.find(Navbar).length).toEqual(1);
 });
