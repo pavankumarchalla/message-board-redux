@@ -1,56 +1,29 @@
 import React from "react";
+import PrivateForm from "./PrivateForm";
+import PrivateList from "./PrivateList";
 
 class PrivateMessage extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      newPost: {
-        title: "",
-        link: ""
-      }
-    };
-  }
-
-  handleChangeTitle = event => {
-    this.setState({
-      newPost: { title: event.target.value }
-    });
+  state = {
+    messages: []
   };
 
-  handleChangeLink = event => {
-    this.setState({
-      newPost: { link: event.target.value }
-    });
+  addMessage = msg => {
+    this.setState({ messages: [...this.state.messages, msg] });
   };
 
-  handleSubmit = event => {
-    event.preventDefault();
-    this.props.addPost(this.state.newPost);
-    this.setState({
-      inputText: ""
-    });
+  deleteMessage = msg => {
+    const updateArray = this.state.messages.filter(m => m != msg);
+    this.setState({ messages: updateArray });
   };
   render() {
     return (
-      <form>
-        <input
-          onChange={this.handleChangeTitle}
-          type="text"
-          className="form-control"
-          value={this.state.titleInput}
-          placeholder="Post title"
+      <div>
+        <PrivateForm addMessage={this.addMessage} />
+        <PrivateList
+          messages={this.state.messages}
+          deleteMessage={this.deleteMessage}
         />
-        <input
-          onChange={this.handleChangeLink}
-          type="text"
-          className="form-control"
-          value={this.state.linkInput}
-          placeholder="Post link"
-        />
-        <button onClick={this.handleSubmit} className="btn btn-primary">
-          Add
-        </button>
-      </form>
+      </div>
     );
   }
 }

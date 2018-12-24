@@ -4,23 +4,22 @@ import PublicForm from "./PublicForm";
 
 class PublicBoard extends Component {
   state = {
-    posts: [
-      {
-        id: 1,
-        title: "This is a new title",
-        url: "http://google.com"
-      }
-    ]
+    posts: []
   };
 
-  addPost(post) {
-    //this.setState({ posts: [...this.state.posts, post] });
-  }
+  addPost = post => {
+    this.setState({ posts: [...this.state.posts, post] });
+  };
+
+  deletePost = post => {
+    const updateArray = this.state.posts.filter(m => m !== post);
+    this.setState({ posts: updateArray });
+  };
   render() {
     return (
       <div>
         <div>
-          <PublicForm />
+          <PublicForm addPost={this.addPost} />
           <PublicList posts={this.state.posts} deletePost={this.deletePost} />
         </div>
       </div>
