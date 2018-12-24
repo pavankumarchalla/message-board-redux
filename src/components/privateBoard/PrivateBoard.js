@@ -12,7 +12,7 @@ class PrivateMessage extends React.Component {
   };
 
   deleteMessage = msg => {
-    const updateArray = this.state.messages.filter(m => m != msg);
+    const updateArray = this.state.messages.filter(m => m !== msg);
     this.setState({ messages: updateArray });
   };
   render() {
