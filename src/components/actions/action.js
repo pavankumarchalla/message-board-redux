@@ -9,3 +9,7 @@ export const addMessage = (message) => {
 export const deletePost = (post) => {
     return {type: "DELETE_POST", post}
 };
+
+export const deleteMessage = (message) => {
+    return {type: "DELETE_MESSAGE", message}
+};

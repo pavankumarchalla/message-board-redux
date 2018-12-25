@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import {connect} from 'react-redux';
+import * as actions from '../actions/action';
 
 class PrivateList extends Component {
   handleDelete = msg => {
@@ -39,4 +40,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(PrivateList);
+export default connect(mapStateToProps, actions)(PrivateList);

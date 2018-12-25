@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import PublicList from "./PublicList";
 import PublicForm from "./PublicForm";
-import {connect} from 'react-redux';
 
 class PublicBoard extends Component {
   state = {
@@ -25,10 +24,5 @@ class PublicBoard extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    posts: state.posts
-  };
-};
 
-export default connect(mapStateToProps)(PublicBoard);
+export default PublicBoard;
