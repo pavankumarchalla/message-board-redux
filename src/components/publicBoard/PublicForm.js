@@ -21,6 +21,10 @@ class PublicForm extends Component {
     });
   };
 
+  handlePosts = event => {
+    this.props.getPosts();
+  }
+
   render() {
     return (
       <div>
@@ -31,6 +35,9 @@ class PublicForm extends Component {
         />
         <button onClick={this.handleSubmit} className="btn btn-primary">
           Post
+        </button>
+        <button onClick={this.handlePosts} className="btn btn-primary">
+          GET POSTS
         </button>
       </div>
     );

@@ -15,8 +15,6 @@ const rootReducer = combineReducers ({
   messages: messageReducer
 });
 
-
-
 const logger = store => {
   return (next) => {
     return (action) => {
@@ -32,7 +30,6 @@ const logger = store => {
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(rootReducer, {}, composeEnhancers(applyMiddleware(logger, ReduxPromise)));
-
 
 class App extends React.Component {
   render() {

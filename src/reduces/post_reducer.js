@@ -6,9 +6,12 @@ export const postReducer = (state = [], action) => {
             return [...state, action.post];
 
         case "DELETE_POST":
-             console.log(state)
             let updatedPosts = state.filter(m => m !== action.post);
             return [...updatedPosts];
+
+        case "LOAD_POSTS":
+            debugger;
+            return [...state, ...action.payload.data.map(data => data.title)]
 
         default:
             return state;
