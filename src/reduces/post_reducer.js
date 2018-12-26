@@ -10,7 +10,6 @@ export const postReducer = (state = [], action) => {
             return [...updatedPosts];
 
         case "LOAD_POSTS":
-            debugger;
             return [...state, ...action.payload.data.map(data => data.title)]
 
         default:

@@ -39,7 +39,6 @@ class PostList extends React.Component {
 }
 
 const mapStateToProps = state => {
-  debugger;
   return {
     posts: state.posts
   };

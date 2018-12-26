@@ -9,6 +9,7 @@ import {Provider} from 'react-redux';
 import {postReducer} from '../../src/reduces/post_reducer';
 import {messageReducer} from '../../src/reduces/message_reducer';
 import ReduxPromise from 'redux-promise';
+import ReduxThunk from 'redux-thunk';
 
 const rootReducer = combineReducers ({
   posts: postReducer,
@@ -29,7 +30,7 @@ const logger = store => {
 };
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const store = createStore(rootReducer, {}, composeEnhancers(applyMiddleware(logger, ReduxPromise)));
+const store = createStore(rootReducer, {}, composeEnhancers(applyMiddleware(logger, ReduxPromise, ReduxThunk)));
 
 class App extends React.Component {
   render() {

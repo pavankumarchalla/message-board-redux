@@ -30,7 +30,10 @@ class PrivateForm extends Component {
           className="form-control"
         />
         <button onClick={this.handleSubmit} className="btn btn-primary">
-          Post
+          Message
+        </button>
+        <button onClick={this.props.getMessages} className="btn btn-primary">
+          Get Messages
         </button>
       </div>
     );

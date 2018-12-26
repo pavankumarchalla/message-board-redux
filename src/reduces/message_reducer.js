@@ -9,6 +9,12 @@ export const messageReducer = (state = [], action) => {
             let updatedMessages = state.filter(m => m !== action.message);
             return [...updatedMessages];
 
+        case "LOAD_MESSAGES":
+            return [...state, ...action.payload];
+
+        case "LOAD_ERROR_MESSAGE":
+            return [...state, action.payload];
+
         default:
             return state;
     }
