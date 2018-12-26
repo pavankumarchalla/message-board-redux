@@ -9,13 +9,11 @@ import Root from '../Root'
 class App extends React.Component {
   render() {
     return (
-      <Root>
-          <div>
-            <Navbar />
-            <Route path="/" exact component={PublicBoard} />
-            <Route path="/private" component={PrivateMessage} />
-          </div>
-      </Root>
+      <div>
+        <Navbar />
+        <Route path="/" exact component={PublicBoard} />
+        <Route path="/private" component={PrivateMessage} />
+      </div>
     );
   }
 }
