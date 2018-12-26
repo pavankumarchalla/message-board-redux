@@ -10,7 +10,7 @@ export const postReducer = (state = [], action) => {
             return [...updatedPosts];
 
         case "LOAD_POSTS":
-            return [...state, ...action.payload.data.map(data => data.title)]
+            return [...state, ...action.payload.data.map(data => data)]
 
         default:
             return state;
