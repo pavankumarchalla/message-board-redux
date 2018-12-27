@@ -2,6 +2,7 @@ import React from "react";
 import { mount } from "enzyme";
 import Root from "../../../Root";
 import PublicForm from "../../publicBoard/PublicForm";
+import renderer from 'react-test-renderer'
 
 let wrapper;
 beforeEach(() => {
@@ -41,4 +42,14 @@ it("should render a text area", () => {
 
 it("should render a blue button", () => {
   expect(wrapper.find("button.btn-primary").length).toEqual(1);
+});
+
+it('check snapshot for publicForm',() => {
+    wrapper = renderer.create(
+      <Root>
+        <PublicForm />
+      </Root>
+    );
+
+    expect(wrapper.toJSON()).toMatchSnapshot();
 });
