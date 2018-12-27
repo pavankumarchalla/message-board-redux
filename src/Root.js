@@ -4,8 +4,8 @@ import {Provider} from 'react-redux';
 import ReduxPromise from 'redux-promise';
 import ReduxThunk from 'redux-thunk';
 import { BrowserRouter } from "react-router-dom";
-import {postReducer} from './reduces/post_reducer';
-import {messageReducer} from './reduces/message_reducer';
+import {postReducer} from './reducers/post_reducer';
+import {messageReducer} from './reducers/message_reducer';
 
 const rootReducer = combineReducers ({
     posts: postReducer,
