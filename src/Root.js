@@ -24,11 +24,17 @@ const rootReducer = combineReducers ({
       };
     };
   };
+
+  const dummyState = {
+      posts: [{id: 1, title: 'Pavan'}, {id: 1, title: 'Kumar'}]
+  };
   
   const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-  const store = createStore(rootReducer, {}, composeEnhancers(applyMiddleware(logger, ReduxPromise, ReduxThunk)));
 class Root extends Component {
     render() {
+        const initialState = this.props.initialState || dummyState;
+        const store = createStore(rootReducer, initialState, composeEnhancers(applyMiddleware(logger, ReduxPromise, ReduxThunk)));
+
         return (
             <Provider store={store}>
                 <BrowserRouter>{this.props.children}</BrowserRouter>

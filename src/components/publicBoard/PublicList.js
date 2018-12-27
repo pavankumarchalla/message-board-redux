@@ -19,9 +19,14 @@ class PostList extends React.Component {
             <div key={key} className="card mt-1">
               <div className="card-body">
                 {!post.userId ?
-                <span className="ml-2" role="img" aria-label="">
-                  👍 {post}
-                </span>
+                  <span className="ml-2" role="img" aria-label="">
+                    👍{" "}
+                    {post.title ? (
+                      <span>{post.title}</span>
+                    ) : (
+                      <span>{post}</span>
+                    )}
+                  </span>
                 :
                 <div>
                   <span className="mr-4 upvotes">1</span>

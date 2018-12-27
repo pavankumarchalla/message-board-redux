@@ -1,6 +1,7 @@
 import React from 'react'
 import {mount} from 'enzyme'
 import PublicForm from '../publicBoard/PublicForm'
+import PublicList from '../publicBoard/PublicForm'
 import Root from '../../root';
 import App from '../App'
 
@@ -12,4 +13,5 @@ it("renders a public form", () => {
     );
 
     expect(wrapper.find(PublicForm).length).toEqual(1);
+    expect(wrapper.find(PublicList).length).toEqual(1);
 });
